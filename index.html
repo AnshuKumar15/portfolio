@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anshu Kumar // AI & ML Engineer // Retro OS</title>
+  <meta name="description" content="Anshu Kumar - AI & ML Engineer, CS Graduate from DSCE Bangalore. Specializing in GenAI, LLMs, RAG, and Computer Vision.">
+  <meta name="author" content="Anshu Kumar">
+  <meta name="keywords" content="Anshu Kumar, AI Engineer, Machine Learning Engineer, GenAI, LLMs, RAG, Computer Vision, Portfolio, DSCE Bangalore">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Anshu Kumar // AI & ML Engineer // Retro OS Portfolio">
+  <meta property="og:description" content="AI & ML Engineer specializing in GenAI, LLM Post-Training workflows, RAG architectures, and Computer Vision pipelines.">
+  <meta property="og:image" content="assets/images/anshu_profile.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anshu Kumar // AI & ML Engineer">
+  <meta name="twitter:description" content="AI & ML Engineer specializing in GenAI, LLM Post-Training workflows, RAG architectures, and Computer Vision pipelines.">
+  <meta name="twitter:image" content="assets/images/anshu_profile.jpg">
+
+  <!-- Browser UI Theme Color -->
+  <meta name="theme-color" content="#f9eedb">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=7">
+  <link rel="stylesheet" href="assets/css/retro-os.css?v=7">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+</head>
+<body>
+
+  <!-- ====================================================================
+       TOP RETRO OS MENU BAR (SCREENSHOT REPLICA)
+       ==================================================================== -->
+  <header class="desktop-top-bar">
+    <div class="top-bar-left">
+      <div class="top-brand-badge" onclick="window.openWindow('about')">
+        <span>Anshu's Portfolio</span>
+      </div>
+
+      <ul class="top-nav-tabs">
+        <li><a href="#about" class="active-tab" title="About Me">About Me</a></li>
+        <li><a href="#projects" title="Projects">Projects</a></li>
+        <li><a href="#experience" title="Experience">Experience</a></li>
+        <li><a href="#sidequests" title="Side Quests">Side Quests</a></li>
+        <li><a href="#connect" title="Let's Connect">Let's Connect</a></li>
+      </ul>
+    </div>
+
+    <div class="top-bar-right">
+      <div class="status-online">
+        <span class="status-online-dot"></span> online
+      </div>
+      <div class="top-clock-text" id="retro-live-clock">Thu 10:08 PM</div>
+      
+      <div class="top-controls-group">
+        <button id="sfx-toggle-btn" class="retro-mini-btn">🔊 SFX: ON</button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ====================================================================
+       MAIN DESKTOP WORKSPACE (100VH NON-SCROLLABLE DESKTOP CANVAS)
+       ==================================================================== -->
+  <main class="desktop-workspace">
+
+    <!-- Desktop Icons (Right side matching reference screenshot) -->
+    <div class="desktop-icons-area">
+      
+      <!-- 01. About Me Icon -->
+      <button class="desktop-icon-item" data-window="about" title="Open About Me">
+        <div class="desktop-icon-graphic">
+          <svg viewBox="0 0 36 36" width="44" height="44" fill="none">
+            <rect x="3" y="4" width="30" height="20" rx="1" fill="#FFFDF5" stroke="#1A1A1A" stroke-width="2.5"/>
+            <rect x="7" y="8" width="22" height="12" fill="#2563EB" stroke="#1A1A1A" stroke-width="1.5"/>
+            <rect x="10" y="11" width="10" height="2" fill="#FFF"/>
+            <rect x="10" y="14" width="6" height="2" fill="#6EE7B7"/>
+            <path d="M12 24 L24 24 L27 30 L9 30 Z" fill="#F9EEDB" stroke="#1A1A1A" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="desktop-icon-title">About Me</span>
+      </button>
+
+      <!-- 02. Projects Icon -->
+      <button class="desktop-icon-item" data-window="projects" title="Open Projects">
+        <div class="desktop-icon-graphic">
+          <svg viewBox="0 0 36 36" width="44" height="44" fill="none">
+            <path d="M4 10 L14 10 L17 14 L32 14 L32 29 L4 29 Z" fill="#FFFDF5" stroke="#1A1A1A" stroke-width="2.5"/>
+            <rect x="7" y="16" width="22" height="10" fill="#FDE047" stroke="#1A1A1A" stroke-width="1.5"/>
+            <line x1="10" y1="19" x2="20" y2="19" stroke="#1A1A1A" stroke-width="1.5"/>
+            <line x1="10" y1="22" x2="24" y2="22" stroke="#1A1A1A" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <span class="desktop-icon-title">Projects</span>
+      </button>
+
+      <!-- 03. Experience Icon -->
+      <button class="desktop-icon-item" data-window="experience" title="Open Experience">
+        <div class="desktop-icon-graphic">
+          <svg viewBox="0 0 36 36" width="44" height="44" fill="none">
+            <rect x="5" y="10" width="26" height="19" rx="1" fill="#FFFDF5" stroke="#1A1A1A" stroke-width="2.5"/>
+            <path d="M13 10 L13 6 L23 6 L23 10" stroke="#1A1A1A" stroke-width="2.5" fill="none"/>
+            <line x1="5" y1="18" x2="31" y2="18" stroke="#1A1A1A" stroke-width="1.5"/>
+            <rect x="16" y="16" width="4" height="4" fill="#FCA5A5" stroke="#1A1A1A" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <span class="desktop-icon-title">Experience</span>
+      </button>
+
+      <!-- 04. Side Quests Icon -->
+      <button class="desktop-icon-item" data-window="sidequests" title="Open Side Quests">
+        <div class="desktop-icon-graphic">
+          <svg viewBox="0 0 36 36" width="44" height="44" fill="none">
+            <circle cx="18" cy="18" r="13" fill="#BBF7D0" stroke="#1A1A1A" stroke-width="2.5"/>
+            <path d="M18 9 L21 15 L27 16 L22 21 L24 27 L18 24 L12 27 L14 21 L9 16 L15 15 Z" fill="#FEF08A" stroke="#1A1A1A" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <span class="desktop-icon-title">Side Quests</span>
+      </button>
+
+      <!-- 05. Let's Connect Icon -->
+      <button class="desktop-icon-item" data-window="connect" title="Open Let's Connect">
+        <div class="desktop-icon-graphic">
+          <svg viewBox="0 0 36 36" width="44" height="44" fill="none">
+            <rect x="3" y="8" width="30" height="20" rx="1" fill="#FBCFE8" stroke="#1A1A1A" stroke-width="2.5"/>
+            <path d="M3 9 L18 19 L33 9" stroke="#1A1A1A" stroke-width="2.5" fill="none"/>
+          </svg>
+        </div>
+        <span class="desktop-icon-title">Connect</span>
+      </button>
+
+    </div>
+
+
+    <!-- ====================================================================
+         WINDOW 01: ABOUT ME (HELLO.ME PERSONAL INTRO)
+         ==================================================================== -->
+    <section class="retro-window active-window" id="about">
+      <div class="window-header">
+        <div class="window-title-group">
+          <span class="win-num-badge">01</span>
+          <span class="window-title-badge">about_anshu.txt</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-btn win-ctrl-min" title="Minimize">−</button>
+          <button class="win-btn win-ctrl-expand" title="Expand">□</button>
+          <button class="win-btn win-ctrl-close" title="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <div class="about-window-grid">
+          
+          <!-- Left Column: Retro Polaroid Frame with Photo -->
+          <div class="about-polaroid-frame">
+            <img src="assets/images/anshu_profile.jpg" alt="Anshu Kumar" class="about-polaroid-img">
+          </div>
+
+          <!-- Right Column: Profile Overview & Scrollable Content -->
+          <div class="about-overview-col">
+            <div class="about-overview-tag">PROFILE / OVERVIEW</div>
+            <h1 class="about-pixel-name">ANSHU<br>KUMAR</h1>
+            <hr class="about-overview-divider">
+
+            <!-- Bio Overview Subbox -->
+            <div class="about-bio-box">
+              <div class="subbox-tab" style="background:var(--accent-blue, #bfdbfe);">OVERVIEW</div>
+              <p class="about-bio-text">
+                Hey! I'm an AI &amp; Machine Learning Engineer with a B.E. in <strong>Computer Science &amp; Engineering from Dayananda Sagar College of Engineering, Bangalore</strong>. I specialize in building end-to-end <strong>GenAI applications, LLM Post-Training workflows (multimodal evaluation, alignment, prompt engineering), RAG architectures</strong>, and high-precision, low-latency <strong>Computer Vision pipelines</strong>.
+              </p>
+            </div>
+
+            <!-- Chill Greentext Dev Log -->
+            <div class="about-greentext-box">
+              <div class="subbox-tab" style="background:var(--accent-mint, #bbf7d0);">SYS_LOG</div>
+              <div class="greentext-log-body">
+                <div class="gt-line"><span class="gt-prompt">&gt;</span> <span class="gt-text">be me, Anshu Kumar</span></div>
+                <div class="gt-line"><span class="gt-prompt">&gt;</span> <span class="gt-text">CS Graduate @ DSCE Bangalore</span></div>
+                <div class="gt-line"><span class="gt-prompt">&gt;</span> <span class="gt-text">LLM Post Training Intern @ EtharaAI (1000+ multimodal evals, model alignment &amp; prompt workflows)</span></div>
+                <div class="gt-line"><span class="gt-prompt">&gt;</span> <span class="gt-text">architected Confidometer: multimodal CV &amp; Groq-accelerated Whisper STT analytics (&lt;80ms frame CV)</span></div>
+                <div class="gt-line"><span class="gt-prompt">&gt;</span> <span class="gt-text">built MindMate++: multilingual emotion/crisis NLP pipeline &amp; Gemini chatbot (Best Project Award)</span></div>
+                <div class="gt-line"><span class="gt-prompt">&gt;</span> <span class="gt-text">engineered Hybrid RAG (BM25 + FAISS MMR + FlashRank reranking + Gemini Flash citations)</span></div>
+                <div class="gt-line"><span class="gt-prompt">&gt;</span> <span class="gt-text">solved 167+ LeetCode DSA problems &amp; won Rubik's Cube Championship @ IIT-ISM Dhanbad</span></div>
+                <div class="gt-line"><span class="gt-prompt">&gt;</span> <span class="gt-text">when not training models: lifting heavy, playing guitar, and cooking</span></div>
+              </div>
+            </div>
+
+            <!-- Technical Skills Arsenal -->
+            <div class="about-skills-section">
+              <div>
+                <div class="skills-group-title">⚡ MACHINE LEARNING &amp; AI</div>
+                <div class="skills-pills-wrap">
+                  <span class="skill-retro-badge badge-ai">Machine Learning</span>
+                  <span class="skill-retro-badge badge-ai">Deep Learning</span>
+                  <span class="skill-retro-badge badge-ai">GenAI</span>
+                  <span class="skill-retro-badge badge-ai">LLMs</span>
+                  <span class="skill-retro-badge badge-ai">RAG</span>
+                  <span class="skill-retro-badge badge-ai">Natural Language Processing (NLP)</span>
+                  <span class="skill-retro-badge badge-ai">Computer Vision (OpenCV, MediaPipe)</span>
+                  <span class="skill-retro-badge badge-ai">Prompt Engineering</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="skills-group-title">💻 PROGRAMMING LANGUAGES &amp; FRAMEWORKS</div>
+                <div class="skills-pills-wrap">
+                  <span class="skill-retro-badge badge-lang">Python</span>
+                  <span class="skill-retro-badge badge-lang">C</span>
+                  <span class="skill-retro-badge badge-lang">C++</span>
+                  <span class="skill-retro-badge badge-lang">SQL</span>
+                  <span class="skill-retro-badge badge-tool">TensorFlow</span>
+                  <span class="skill-retro-badge badge-tool">PyTorch</span>
+                  <span class="skill-retro-badge badge-tool">Scikit-Learn</span>
+                  <span class="skill-retro-badge badge-tool">FAISS</span>
+                  <span class="skill-retro-badge badge-tool">Pandas</span>
+                  <span class="skill-retro-badge badge-tool">NumPy</span>
+                  <span class="skill-retro-badge badge-tool">Seaborn</span>
+                  <span class="skill-retro-badge badge-tool">FastAPI</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="skills-group-title">🗄️ DATABASES &amp; TOOLS</div>
+                <div class="skills-pills-wrap">
+                  <span class="skill-retro-badge badge-db">MySQL</span>
+                  <span class="skill-retro-badge badge-db">PostgreSQL</span>
+                  <span class="skill-retro-badge badge-db">MongoDB</span>
+                  <span class="skill-retro-badge badge-tool">Git</span>
+                  <span class="skill-retro-badge badge-tool">GitHub</span>
+                  <span class="skill-retro-badge badge-tool">Docker</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education & Achievements Section -->
+            <div class="about-edu-container">
+              <!-- Education Card -->
+              <div class="about-edu-box">
+                <div class="edu-box-tab">ACADEMICS</div>
+                <div class="edu-box-title">
+                  <span>🎓</span> EDUCATION
+                </div>
+                <div class="edu-box-body">
+                  <div class="edu-degree">B.E. Computer Science &amp; Engineering</div>
+                  <div class="edu-inst">Dayananda Sagar College of Engineering, Bangalore</div>
+                  <div class="edu-meta-badge">🎓 Graduate</div>
+                </div>
+              </div>
+
+              <!-- Honors & Achievements Card -->
+              <div class="about-edu-box">
+                <div class="edu-box-tab tab-green">HONORS</div>
+                <div class="edu-box-title">
+                  <span>🏆</span> ACHIEVEMENTS
+                </div>
+                <ul class="edu-achieve-list">
+                  <li>
+                    <strong>Best Project Award</strong>
+                    <span>MindMate++ @ College Open Day</span>
+                  </li>
+                  <li>
+                    <strong>1st Place Winner</strong>
+                    <span>Rubik's Cube @ IIT-ISM Dhanbad (150+ contestants)</span>
+                  </li>
+                  <li>
+                    <strong>167+ LeetCode Solved</strong>
+                    <span>Data Structures &amp; Algorithms</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; margin-bottom:12px;">
+              <button class="retro-btn btn-pink" onclick="window.openWindow('projects')">View Projects ↗</button>
+              <button class="retro-btn btn-green" onclick="window.openWindow('connect')">Let's Connect ✉</button>
+              <button class="retro-btn" onclick="window.openWindow('experience')">Work History ↓</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="retro-window-grip"></div>
+    </section>
+
+
+    <!-- ====================================================================
+         WINDOW 02: PROJECTS
+         ==================================================================== -->
+    <section class="retro-window" id="projects">
+      <div class="window-header">
+        <div class="window-title-group">
+          <span class="win-num-badge">02</span>
+          <span class="window-title-badge">featured.projects</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-btn win-ctrl-min" title="Minimize">−</button>
+          <button class="win-btn win-ctrl-expand" title="Expand">□</button>
+          <button class="win-btn win-ctrl-close" title="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window-body">
+        
+        <!-- PROJECT 01: CONFIDOMETER -->
+        <div class="projects-featured-banner">
+          <div class="proj-title-row">
+            <h2 class="proj-pixel-title">CONFIDOMETER</h2>
+            <a href="https://www.confidometer.online/" target="_blank" rel="noopener noreferrer" class="retro-live-badge" title="Visit Live Website!"><span class="live-dot-blink"></span>LIVE</a>
+          </div>
+
+          <!-- Short Description at the Top -->
+          <div class="proj-quote-box">
+            Confidometer is an all-in-one AI career co-pilot and interview preparation platform integrating real-time Computer Vision, acoustic speech analysis, and multimodal LLMs to turn high-stakes job interviewing into a measurable, masterable skill.
+          </div>
+
+          <!-- Two Side-by-Side Boxes -->
+          <div class="proj-split-cards">
+            
+            <!-- Left Box: Project Overview & Problems Solved in Paragraphs -->
+            <div class="retro-subbox">
+              <div class="subbox-tab">OVERVIEW &amp; IMPACT</div>
+              <h3 class="subbox-title">MISSION &amp; PROBLEMS SOLVED</h3>
+              <p style="margin-bottom:12px; line-height:1.55;">
+                <strong>The Flight Simulator for Job Seekers:</strong> Just as pilots spend hundreds of hours in flight simulators before flying real aircraft, Confidometer provides an authentic, high-pressure interview environment where candidates practice in a private, judgment-free space tailored specifically to their resume, target company, and dream role.
+              </p>
+              <p style="line-height:1.5;">
+                <strong>Problems Solved:</strong> Eliminates interview anxiety with real-time feedback on vocal delivery and body language, replaces recruiter silence with actionable analytics, and accelerates job prep.
+              </p>
+            </div>
+
+            <!-- Right Box: Key Features & AI/ML Architecture -->
+            <div class="retro-subbox">
+              <div class="subbox-tab" style="background:#bbf7d0;">AI/ML CORE</div>
+              <h3 class="subbox-title">AI &amp; VISION ARCHITECTURE</h3>
+              <ul style="display:flex; flex-direction:column; gap:6px; line-height:1.4;">
+                <li><strong>Multimodal LLM Agent:</strong> Evaluates STAR Behavioral, Technical, and Negotiation rounds.</li>
+                <li><strong>Voice &amp; Acoustic ML:</strong> Whisper + Librosa measuring pace, pitch variance, and filler words.</li>
+                <li><strong>Vision &amp; Head Pose:</strong> MediaPipe &amp; solvePnP tracking eye contact, gaze, and fidgeting.</li>
+                <li><strong>Confidence Scoring:</strong> Fuses visual, acoustic, and LLM reasoning into scored report cards.</li>
+                <li><strong>Job Copilot Agent:</strong> Semantic role matching and auto-generated tailored cover letters.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="proj-footer-bar">
+            <div class="proj-footer-tags">
+              <span class="tech-tag">Multimodal LLMs</span>
+              <span class="tech-tag">OpenAI Whisper ASR</span>
+              <span class="tech-tag">MediaPipe CV</span>
+              <span class="tech-tag">solvePnP Head Pose</span>
+              <span class="tech-tag">Librosa &amp; Audio ML</span>
+              <span class="tech-tag">Multimodal Scoring Fusion</span>
+              <span class="tech-tag">Edge-TTS</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <div class="proj-footer-actions">
+              <a href="https://www.confidometer.online/" target="_blank" rel="noopener noreferrer" class="retro-btn">Live Demo ↗</a>
+              <a href="https://github.com/AnshuKumar15/Confidometer" target="_blank" rel="noopener noreferrer" class="retro-btn btn-green">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 02: MINDMATE++ -->
+        <div class="project-item-card" style="margin-bottom:24px;">
+          <div class="proj-title-row">
+            <h2 class="proj-pixel-title">MINDMATE++</h2>
+            <div class="project-award-badge" style="margin:0;">
+              🏆 BEST PROJECT AWARD – COLLEGE OPEN DAY
+            </div>
+          </div>
+
+          <!-- Short Description at the Top -->
+          <div class="proj-quote-box">
+            An AI-powered mental wellness and student companion platform combining an empathetic conversational companion, multilingual voice emotion &amp; crisis detection, and an algorithmic study planner to help students combat stress and academic burnout.
+          </div>
+
+          <!-- Two Side-by-Side Boxes -->
+          <div class="proj-split-cards">
+            
+            <!-- Left Box: Project Overview & Issues in One Paragraph -->
+            <div class="retro-subbox">
+              <div class="subbox-tab">OVERVIEW</div>
+              <h3 class="subbox-title">ABOUT THE PROJECT</h3>
+              <p style="line-height:1.6;">
+                MindMate++ is an AI-powered mental wellness and student companion platform designed to help young adults tackle academic burnout, anxiety, and emotional distress. Traditional mental health support often faces language barriers, lacks round-the-clock availability, and misses critical crisis signals. MindMate++ bridges this gap by providing an empathetic voice and chat companion across English, Hindi, and Kannada, flagging real-time distress and self-harm keywords for rapid intervention, and preventing exam panic through automated, burnout-free study scheduling.
+              </p>
+            </div>
+
+            <!-- Right Box: Core Contributions in Clear, Punchy Bullets -->
+            <div class="retro-subbox">
+              <div class="subbox-tab" style="background:#bbf7d0;">KEY WORK</div>
+              <h3 class="subbox-title">WHAT I BUILT</h3>
+              <ul style="display:flex; flex-direction:column; gap:8px; line-height:1.5;">
+                <li><strong>Voice Emotion &amp; Crisis Detection:</strong> Speech recognition and emotion analysis to detect distress and self-harm keywords across English, Hindi, and Kannada.</li>
+                <li><strong>Empathetic Chatbot:</strong> A Gemini-powered conversational companion with multi-turn memory that provides continuous, supportive dialogue.</li>
+                <li><strong>Smart Study Planner:</strong> Automatically creates balanced exam timetables with study blocks, meal breaks, and direct Google Calendar sync.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="proj-footer-bar">
+            <div class="proj-footer-tags">
+              <span class="tech-tag">Google Gemini API</span>
+              <span class="tech-tag">OpenAI Whisper</span>
+              <span class="tech-tag">HuggingFace Transformers</span>
+              <span class="tech-tag">Zero-Shot NLI</span>
+              <span class="tech-tag">Google Calendar API</span>
+            </div>
+            <div class="proj-footer-actions">
+              <a href="https://github.com/AnshuKumar15/MindMate_plus_plus" target="_blank" rel="noopener noreferrer" class="retro-btn btn-green">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 03: HYBRID RAG FOR PDF Q&A -->
+        <div class="project-item-card" style="margin-bottom:12px;">
+          <div class="proj-title-row">
+            <h2 class="proj-pixel-title">HYBRID RAG FOR PDF Q&amp;A</h2>
+          </div>
+
+          <!-- Short Description at the Top -->
+          <div class="proj-quote-box">
+            A high-precision document intelligence system combining keyword and semantic vector search with neural reranking to deliver grounded, hallucination-free answers from complex PDFs.
+          </div>
+
+          <!-- Two Side-by-Side Boxes -->
+          <div class="proj-split-cards">
+            
+            <!-- Left Box: Project Overview & Issues in One Paragraph -->
+            <div class="retro-subbox">
+              <div class="subbox-tab">OVERVIEW</div>
+              <h3 class="subbox-title">ABOUT THE PROJECT</h3>
+              <p style="line-height:1.6;">
+                Standard vector search often fails on dense technical documents because it misses exact keyword matches, loses context across long pages, and risks AI hallucination. This project addresses these challenges by uniting lexical search (BM25) with semantic embeddings (FAISS) and cross-encoder reranking, ensuring pinpoint answer accuracy with verifiable, page-level source citations.
+              </p>
+            </div>
+
+            <!-- Right Box: Core Contributions in Clear, Punchy Bullets -->
+            <div class="retro-subbox">
+              <div class="subbox-tab" style="background:#bbf7d0;">KEY WORK</div>
+              <h3 class="subbox-title">WHAT I BUILT</h3>
+              <ul style="display:flex; flex-direction:column; gap:8px; line-height:1.5;">
+                <li><strong>Hybrid Search &amp; Reranking:</strong> Combined BM25 keyword matching with FAISS vector search and FlashRank reranking for maximum retrieval precision.</li>
+                <li><strong>Hierarchical Document Chunking:</strong> Multi-level PDF parsing that preserves section context, tables, and document hierarchy.</li>
+                <li><strong>Grounded Answers &amp; Citations:</strong> Integrated Gemini Flash with page-level citations and SHA-256 caching for instant, verifiable responses.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="proj-footer-bar">
+            <div class="proj-footer-tags">
+              <span class="tech-tag">Hybrid RAG</span>
+              <span class="tech-tag">BM25</span>
+              <span class="tech-tag">FAISS MMR</span>
+              <span class="tech-tag">BGE Embeddings</span>
+              <span class="tech-tag">FlashRank Reranking</span>
+              <span class="tech-tag">Gemini Flash</span>
+              <span class="tech-tag">SHA-256</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <div class="proj-footer-actions">
+              <a href="https://github.com/AnshuKumar15/RAG.pdf" target="_blank" rel="noopener noreferrer" class="retro-btn btn-green">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="retro-window-grip"></div>
+    </section>
+
+
+    <!-- ====================================================================
+         WINDOW 03: EXPERIENCE
+         ==================================================================== -->
+    <section class="retro-window" id="experience">
+      <div class="window-header">
+        <div class="window-title-group">
+          <span class="win-num-badge">03</span>
+          <span class="window-title-badge">experience.log</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-btn win-ctrl-min" title="Minimize">−</button>
+          <button class="win-btn win-ctrl-expand" title="Expand">□</button>
+          <button class="win-btn win-ctrl-close" title="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <h2 style="font-family:var(--font-pixel); font-size:1.1rem; margin-bottom:16px;">CAREER &amp; WORK EXPERIENCE</h2>
+
+        <div class="experience-timeline">
+
+          <!-- Experience 01: EtharaAI -->
+          <div class="experience-card">
+            <div class="exp-card-header">
+              <div>
+                <span class="exp-role-title">LLM Post Training Intern</span>
+                <span class="exp-company-badge">EtharaAI</span>
+              </div>
+              <span class="exp-date-tag">MARCH 2026 – MAY 2026</span>
+            </div>
+            <ul class="exp-details-list">
+              <li>Evaluated 1000+ AI-generated multimodal outputs across image and video tasks, performing pairwise assessments based on visual quality, instruction following, overall quality, and AI-generation artifacts to support model alignment and post-training.</li>
+              <li>Applied prompt engineering, image-to-prompt generation, and structured quality assessment across Generalist and Evals projects, contributing evidence-based feedback to human-in-the-loop AI training workflows.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="retro-window-grip"></div>
+    </section>
+
+
+    <!-- ====================================================================
+         WINDOW 04: SIDE QUESTS
+         ==================================================================== -->
+    <section class="retro-window" id="sidequests">
+      <div class="window-header">
+        <div class="window-title-group">
+          <span class="win-num-badge">04</span>
+          <span class="window-title-badge">side_quests.exe</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-btn win-ctrl-min" title="Minimize">−</button>
+          <button class="win-btn win-ctrl-expand" title="Expand">□</button>
+          <button class="win-btn win-ctrl-close" title="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <h2 style="font-family:var(--font-pixel); font-size:1.1rem; margin-bottom:16px;">SIDE QUESTS &amp; EXPERIMENTS</h2>
+
+        <div class="sidequests-grid">
+
+          <!-- 01. Speed Cubing -->
+          <div class="sidequest-card">
+            <h3 class="sidequest-title"><img src="assets/images/rubiks_cat.png" alt="Rubik's Cat" class="sidequest-icon-img"> SPEED CUBING</h3>
+            <p class="sidequest-desc">I like to solve Rubik's cubes as fast as possible, and trust me, I'm pretty fast.</p>
+          </div>
+
+          <!-- 02. Gym -->
+          <div class="sidequest-card">
+            <h3 class="sidequest-title"><img src="assets/images/gym_cat.png" alt="Gym Cat" class="sidequest-icon-img"> GYM</h3>
+            <p class="sidequest-desc">I just love lifting heavy circles, and I hate myself when I skip a day.</p>
+          </div>
+
+          <!-- 03. Cooking -->
+          <div class="sidequest-card">
+            <h3 class="sidequest-title"><img src="assets/images/chef_cat.png" alt="Chef Cat" class="sidequest-icon-img"> COOKING</h3>
+            <p class="sidequest-desc">I love to make everything and anything at home from scratch, and sometimes healthier versions.</p>
+          </div>
+
+          <!-- 04. Guitar -->
+          <div class="sidequest-card">
+            <h3 class="sidequest-title"><img src="assets/images/guitar_cat.png" alt="Guitar Cat" class="sidequest-icon-img"> GUITAR</h3>
+            <p class="sidequest-desc">I casually play some.</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="retro-window-grip"></div>
+    </section>
+
+
+    <!-- ====================================================================
+         WINDOW 05: LET'S CONNECT
+         ==================================================================== -->
+    <section class="retro-window" id="connect">
+      <div class="window-header">
+        <div class="window-title-group">
+          <span class="win-num-badge">05</span>
+          <span class="window-title-badge">contact.mail</span>
+        </div>
+        <div class="window-controls">
+          <button class="win-btn win-ctrl-min" title="Minimize">−</button>
+          <button class="win-btn win-ctrl-expand" title="Expand">□</button>
+          <button class="win-btn win-ctrl-close" title="Close">×</button>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <div class="connect-header-status">
+          <span>📍 BENGALURU, INDIA</span>
+          <span style="color:#16a34a;">● OPEN TO ROLES &amp; COLLABORATIONS</span>
+        </div>
+
+        <div class="connect-links-stack">
+          <!-- Email Card -->
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anshu.mj29@gmail.com" target="_blank" rel="noopener noreferrer" class="retro-contact-card" title="Compose Email in Gmail">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="1"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <span class="contact-card-title">EMAIL</span>
+              <span class="contact-card-url">anshu.mj29@gmail.com</span>
+            </div>
+            <span class="contact-card-arrow">↗</span>
+          </a>
+
+          <!-- LinkedIn Card -->
+          <a href="https://www.linkedin.com/in/anshu-kumar-462b1026a/" target="_blank" rel="noopener noreferrer" class="retro-contact-card" title="Open LinkedIn Profile">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <span class="contact-card-title">LINKEDIN</span>
+              <span class="contact-card-url">linkedin.com/in/anshu-kumar-462b1026a</span>
+            </div>
+            <span class="contact-card-arrow">↗</span>
+          </a>
+
+          <!-- GitHub Card -->
+          <a href="https://github.com/AnshuKumar15" target="_blank" rel="noopener noreferrer" class="retro-contact-card" title="Open GitHub Profile">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </div>
+            <div class="contact-card-info">
+              <span class="contact-card-title">GITHUB</span>
+              <span class="contact-card-url">github.com/AnshuKumar15</span>
+            </div>
+            <span class="contact-card-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="retro-window-grip"></div>
+    </section>
+
+    <!-- Interactive Animated Cat Desktop Companion -->
+    <div class="cat-companion-area">
+      <div class="sleeping-cat-container" id="sleeping-cat" title="Purr... click to nudge me!">
+        <div class="cat-zzz-bubble">Zzz...</div>
+        <img src="assets/images/cat_sleep.png" alt="Cat Companion" class="sleeping-cat-img" id="companion-cat-sprite">
+      </div>
+      <button class="nudge-cat-btn" id="nudge-cat-btn" title="Click to nudge the sleeping cat!">
+        <span class="nudge-paw">🐾</span> Nudge the Cat
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Application Scripts -->
+  <script src="assets/js/sfx.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
