@@ -1018,44 +1018,372 @@ body.theme-mac .window-header {
   color: #16a34a;
 }
 
-/* Responsive Window adjustments */
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE ENGINE (TOUCH-SAFE & CLEAN VIEWPORT ADAPTATION)
+   ========================================================================== */
+
 @media (max-width: 768px) {
-  .about-window-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  /* 1. Mobile Desktop Top Bar */
+  .desktop-top-bar {
+    padding: 6px 8px;
+    gap: 6px;
+    height: 44px;
+    box-sizing: border-box;
   }
-  .about-polaroid-frame {
-    position: static;
-    max-width: 240px;
-    margin: 0 auto;
+
+  .top-bar-left {
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
   }
-  .about-pixel-name {
-    font-size: 2.2rem;
-    text-align: center;
+
+  .top-bar-left::-webkit-scrollbar {
+    display: none;
   }
-  .about-overview-tag {
-    text-align: center;
+
+  .top-brand-badge {
+    display: none; /* Hide brand text on mobile so tabs have maximum room */
   }
-  .proj-split-cards {
-    grid-template-columns: 1fr;
+
+  .top-nav-tabs {
+    gap: 4px;
+    white-space: nowrap;
+    padding-right: 4px;
   }
-  .connect-window-grid {
-    grid-template-columns: 1fr;
+
+  .top-nav-tabs li a {
+    padding: 4px 8px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+    display: inline-block;
+    -webkit-tap-highlight-color: transparent;
   }
-  #connect .window-body {
-    padding: 16px;
+
+  .top-bar-right {
+    flex-shrink: 0;
+    gap: 6px;
   }
-  .retro-contact-card {
-    padding: 12px 14px;
-    gap: 12px;
+
+  .status-online,
+  #retro-live-clock {
+    display: none; /* Hide clock and online status to avoid crowding header */
   }
-  .contact-card-title {
-    font-size: 0.92rem;
+
+  .retro-mini-btn {
+    padding: 3px 6px;
+    font-size: 0.72rem;
   }
-  .contact-card-url {
-    font-size: 0.8rem;
+
+  /* 2. Mobile Retro Window Sizing & Positioning */
+  .retro-window {
+    width: calc(100vw - 12px) !important;
+    max-width: 100vw !important;
+    height: calc(100dvh - 56px) !important;
+    max-height: calc(100dvh - 56px) !important;
+    top: calc(50% + 22px) !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    box-shadow: 3px 3px 0px #1a1a1a;
   }
+
+  .retro-window.window-maximized {
+    width: calc(100vw - 8px) !important;
+    max-width: 100vw !important;
+    height: calc(100dvh - 50px) !important;
+    max-height: calc(100dvh - 50px) !important;
+    top: calc(50% + 20px) !important;
+  }
+
+  .window-header {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+
+  .win-num-badge,
+  .window-title-badge {
+    font-size: 0.76rem;
+    padding: 1px 5px;
+  }
+
+  .win-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 0.85rem;
+  }
+
+  .window-body {
+    padding: 14px 10px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  /* 3. Hide floating desktop background icons on mobile */
   .desktop-icons-area {
     display: none;
+  }
+
+  /* 4. About Window Mobile Layout */
+  .about-window-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-polaroid-frame {
+    position: static;
+    max-width: 190px;
+    margin: 0 auto 10px auto;
+    padding: 8px;
+    animation: none;
+    transform: none !important;
+    box-shadow: 4px 4px 0px #000;
+  }
+
+  .about-polaroid-img {
+    height: 200px;
+  }
+
+  .about-pixel-name {
+    font-size: 2.1rem;
+    text-align: center;
+  }
+
+  .about-overview-tag {
+    text-align: center;
+    font-size: 0.72rem;
+  }
+
+  .about-bio-box,
+  .about-greentext-box {
+    padding: 12px 10px;
+    margin-bottom: 14px;
+  }
+
+  .about-bio-text,
+  .greentext-log-body {
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  .about-edu-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .skills-badge-list {
+    gap: 5px;
+  }
+
+  .skill-retro-badge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  /* 5. Projects Window Mobile Layout */
+  .projects-featured-banner,
+  .project-item-card {
+    padding: 14px 10px;
+    margin-bottom: 16px;
+  }
+
+  .proj-title-row {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .proj-pixel-title {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+
+  .retro-live-badge {
+    font-size: 0.78rem;
+    padding: 2px 7px;
+  }
+
+  .project-award-badge {
+    font-size: 0.68rem;
+    padding: 3px 6px;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .proj-quote-box {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    line-height: 1.45;
+  }
+
+  .proj-split-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .retro-subbox {
+    padding: 14px 10px 10px 10px;
+  }
+
+  .subbox-tab {
+    top: -10px;
+    right: 8px;
+    font-size: 0.7rem;
+    padding: 1px 6px;
+  }
+
+  .subbox-title {
+    font-size: 1.02rem;
+    margin-bottom: 8px;
+  }
+
+  .retro-subbox p,
+  .retro-subbox ul {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .proj-footer-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .proj-footer-tags {
+    gap: 4px;
+  }
+
+  .tech-tag {
+    font-size: 0.68rem;
+    padding: 2px 5px;
+  }
+
+  .proj-footer-actions {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+
+  .proj-footer-actions .retro-btn {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.82rem;
+    padding: 8px 10px;
+  }
+
+  /* 6. Experience Window Mobile Layout */
+  .exp-timeline {
+    padding-left: 10px;
+  }
+
+  .exp-card {
+    padding: 12px 10px;
+  }
+
+  .exp-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .exp-role-title {
+    font-size: 1.05rem;
+  }
+
+  .exp-details-list {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  /* 7. Side Quests Mobile Layout */
+  .sidequest-card {
+    padding: 12px 10px;
+  }
+
+  .sidequest-title {
+    font-size: 0.98rem;
+  }
+
+  .sidequest-desc {
+    font-size: 0.78rem;
+  }
+
+  /* 8. Connect Window Mobile Layout */
+  #connect .window-body {
+    padding: 12px 10px;
+  }
+
+  .connect-header-status {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.74rem;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .connect-links-stack {
+    gap: 10px;
+  }
+
+  .retro-contact-card {
+    padding: 10px 12px;
+    gap: 10px;
+    min-height: 62px;
+  }
+
+  .contact-card-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contact-card-title {
+    font-size: 0.88rem;
+  }
+
+  .contact-card-url {
+    font-size: 0.76rem;
+  }
+
+  .contact-card-arrow {
+    font-size: 1.1rem;
+  }
+
+  /* 9. Mobile Cat Companion */
+  .cat-companion-area {
+    bottom: 6px;
+    right: 6px;
+    transform: scale(0.78);
+    transform-origin: bottom right;
+    z-index: 150;
+  }
+
+  .nudge-cat-btn {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+}
+
+/* Extra-small mobile screens (<= 390px) */
+@media (max-width: 390px) {
+  .proj-pixel-title {
+    font-size: 1.25rem;
+  }
+  .about-pixel-name {
+    font-size: 1.85rem;
+  }
+  .top-nav-tabs li a {
+    font-size: 0.72rem;
+    padding: 3px 6px;
   }
 }

@@ -329,6 +329,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('mousemove', (e) => {
+    // Ignore synthetic mousemove events on touchscreens
+    if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) return;
+
     const now = Date.now();
     const inTransition = (now - lastInteractiveMoveTime < 1600);
 

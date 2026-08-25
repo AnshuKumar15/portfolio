@@ -55,8 +55,10 @@
 
 html, body {
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
-  overflow: hidden; /* Desktop OS never scrolls */
+  overflow: hidden; /* Desktop OS never scrolls body */
+  -webkit-text-size-adjust: 100%;
   cursor: url('../images/fishbone-cursor.png') 2 2, url('../images/fishbone-cursor.svg') 2 2, auto;
 }
 
