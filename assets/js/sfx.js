@@ -2,9 +2,9 @@
 class RetroAudioEngine {
   constructor() {
     this.ctx = null;
-    // Default to true (ON) unless explicitly toggled off by user
+    // Default to false (OFF) unless explicitly toggled on by user
     const saved = localStorage.getItem('retro_sfx');
-    this.enabled = saved === null ? true : saved === 'true';
+    this.enabled = saved === 'true';
   }
 
   init() {
