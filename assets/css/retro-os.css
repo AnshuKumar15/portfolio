@@ -1019,14 +1019,292 @@ body.theme-mac .window-header {
 }
 
 /* ==========================================================================
+   MOBILE RETRO SIDEBAR & DRAWER NAVIGATION
+   ========================================================================== */
+
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  gap: 5px;
+  background: var(--accent-yellow, #fef08a);
+  border: 2px solid var(--window-border);
+  box-shadow: 2px 2px 0px var(--window-border);
+  padding: 4px 8px;
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--text-main);
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.1s ease, background 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-menu-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--window-border);
+}
+
+.menu-icon-bars {
+  font-size: 1.1rem;
+}
+
+.mobile-sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.mobile-sidebar-backdrop.backdrop-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-sidebar-drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 290px;
+  max-width: 82vw;
+  background: var(--window-bg, #fffdf7);
+  border-right: 3px solid var(--window-border);
+  box-shadow: 6px 0px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10001;
+  transform: translateX(-100%);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.mobile-sidebar-drawer.drawer-open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--window-header-bg, #f9eedb);
+  border-bottom: 2px solid var(--window-border);
+  font-family: var(--font-mono);
+}
+
+.drawer-title-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.drawer-badge {
+  font-size: 0.95rem;
+}
+
+.drawer-title {
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+}
+
+.drawer-close-btn {
+  width: 26px;
+  height: 26px;
+  background: var(--accent-pink, #fbcfe8);
+  border: 1.5px solid var(--window-border);
+  box-shadow: 1.5px 1.5px 0px var(--window-border);
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.drawer-close-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0 0 0;
+}
+
+.mobile-drawer-body {
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drawer-profile-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: #f4ede2;
+  border: 2px solid var(--window-border);
+  box-shadow: 3px 3px 0px var(--window-border);
+  margin-bottom: 16px;
+}
+
+.drawer-avatar-img {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--window-border);
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.drawer-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drawer-profile-name {
+  font-family: var(--font-pixel);
+  font-size: 1.15rem;
+  font-weight: bold;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.drawer-profile-role {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.drawer-nav-section-title {
+  font-family: var(--font-pixel);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  padding-left: 2px;
+}
+
+.mobile-drawer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: auto;
+}
+
+.drawer-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--board-post-bg, #fff9ed);
+  border: 2px solid var(--window-border);
+  box-shadow: 2px 2px 0px var(--window-border);
+  text-decoration: none;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: all 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.drawer-nav-link:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--window-border);
+}
+
+.drawer-nav-link.active {
+  background: var(--accent-yellow, #fef08a);
+  border-left: 5px solid var(--accent-pink-dark, #f472b6);
+  box-shadow: 3px 3px 0px var(--window-border);
+}
+
+.drawer-nav-num {
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+.drawer-nav-icon {
+  font-size: 0.95rem;
+}
+
+.drawer-nav-text {
+  flex: 1;
+}
+
+.drawer-nav-arrow {
+  font-size: 0.65rem;
+  color: var(--accent-pink-dark);
+  opacity: 0.7;
+}
+
+.drawer-nav-link.active .drawer-nav-arrow {
+  opacity: 1;
+}
+
+.drawer-footer-card {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 2px dashed var(--window-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drawer-status-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: bold;
+}
+
+.drawer-social-row {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-social-row .retro-btn {
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+  padding: 6px 8px;
+  font-size: 0.76rem;
+}
+
+/* ==========================================================================
    MOBILE & TABLET RESPONSIVE ENGINE (TOUCH-SAFE & CLEAN VIEWPORT ADAPTATION)
    ========================================================================== */
 
 @media (max-width: 768px) {
   /* 1. Mobile Desktop Top Bar */
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+
+  .mobile-sidebar-backdrop {
+    display: block;
+  }
+
+  .mobile-sidebar-drawer {
+    display: flex;
+  }
+
   .desktop-top-bar {
-    padding: 6px 8px;
-    gap: 6px;
+    padding: 6px 10px;
+    gap: 8px;
     height: 44px;
     box-sizing: border-box;
   }
@@ -1034,32 +1312,16 @@ body.theme-mac .window-header {
   .top-bar-left {
     flex: 1;
     min-width: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 6px;
-  }
-
-  .top-bar-left::-webkit-scrollbar {
-    display: none;
+    gap: 10px;
   }
 
   .top-brand-badge {
-    display: none; /* Hide brand text on mobile so tabs have maximum room */
+    display: inline-flex;
+    font-size: 0.88rem;
   }
 
   .top-nav-tabs {
-    gap: 4px;
-    white-space: nowrap;
-    padding-right: 4px;
-  }
-
-  .top-nav-tabs li a {
-    padding: 4px 8px;
-    font-size: 0.76rem;
-    white-space: nowrap;
-    display: inline-block;
-    -webkit-tap-highlight-color: transparent;
+    display: none; /* In mobile, navigation is housed in the slide-out drawer */
   }
 
   .top-bar-right {

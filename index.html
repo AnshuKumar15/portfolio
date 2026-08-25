@@ -36,6 +36,12 @@
        ==================================================================== -->
   <header class="desktop-top-bar">
     <div class="top-bar-left">
+      <!-- Mobile Sidebar Toggle Button -->
+      <button class="mobile-menu-btn" id="mobile-menu-toggle" title="Open Navigation Menu" aria-label="Open Navigation Menu">
+        <span class="menu-icon-bars">☰</span>
+        <span class="menu-btn-text">MENU</span>
+      </button>
+
       <div class="top-brand-badge" onclick="window.openWindow('about')">
         <span>Anshu's Portfolio</span>
       </div>
@@ -60,6 +66,84 @@
       </div>
     </div>
   </header>
+
+  <!-- ====================================================================
+       MOBILE RETRO SIDEBAR DRAWER (OFF-CANVAS NAVIGATION)
+       ==================================================================== -->
+  <div class="mobile-sidebar-backdrop" id="mobile-sidebar-backdrop"></div>
+  <aside class="mobile-sidebar-drawer" id="mobile-sidebar-drawer" aria-label="Mobile Navigation Sidebar">
+    <div class="mobile-drawer-header">
+      <div class="drawer-title-group">
+        <span class="drawer-badge">📁</span>
+        <span class="drawer-title">navigation.sys</span>
+      </div>
+      <button class="drawer-close-btn" id="mobile-sidebar-close" title="Close Menu" aria-label="Close Menu">×</button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <div class="drawer-profile-mini">
+        <img src="assets/images/anshu_profile.jpg" alt="Anshu Kumar" class="drawer-avatar-img">
+        <div class="drawer-profile-info">
+          <div class="drawer-profile-name">ANSHU KUMAR</div>
+          <div class="drawer-profile-role">AI & ML Engineer</div>
+        </div>
+      </div>
+
+      <div class="drawer-nav-section-title">SYSTEM PARTITIONS</div>
+      <ul class="mobile-drawer-nav">
+        <li>
+          <a href="#about" class="drawer-nav-link active" data-window="about">
+            <span class="drawer-nav-num">01</span>
+            <span class="drawer-nav-icon">👤</span>
+            <span class="drawer-nav-text">About Me</span>
+            <span class="drawer-nav-arrow">▶</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="drawer-nav-link" data-window="projects">
+            <span class="drawer-nav-num">02</span>
+            <span class="drawer-nav-icon">📁</span>
+            <span class="drawer-nav-text">Projects</span>
+            <span class="drawer-nav-arrow">▶</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experience" class="drawer-nav-link" data-window="experience">
+            <span class="drawer-nav-num">03</span>
+            <span class="drawer-nav-icon">💼</span>
+            <span class="drawer-nav-text">Experience</span>
+            <span class="drawer-nav-arrow">▶</span>
+          </a>
+        </li>
+        <li>
+          <a href="#sidequests" class="drawer-nav-link" data-window="sidequests">
+            <span class="drawer-nav-num">04</span>
+            <span class="drawer-nav-icon">🎮</span>
+            <span class="drawer-nav-text">Side Quests</span>
+            <span class="drawer-nav-arrow">▶</span>
+          </a>
+        </li>
+        <li>
+          <a href="#connect" class="drawer-nav-link" data-window="connect">
+            <span class="drawer-nav-num">05</span>
+            <span class="drawer-nav-icon">📬</span>
+            <span class="drawer-nav-text">Let's Connect</span>
+            <span class="drawer-nav-arrow">▶</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-footer-card">
+        <div class="drawer-status-line">
+          <span class="status-online-dot"></span> System Online (BLR, IN)
+        </div>
+        <div class="drawer-social-row">
+          <a href="https://github.com/AnshuKumar15" target="_blank" rel="noopener noreferrer" class="retro-btn btn-green">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/anshu-kumar-462b1026a/" target="_blank" rel="noopener noreferrer" class="retro-btn">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </aside>
 
 
   <!-- ====================================================================

@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const allWindows = document.querySelectorAll('.retro-window');
   const topTabs = document.querySelectorAll('.top-nav-tabs li a');
   const desktopIcons = document.querySelectorAll('.desktop-icon-item');
+  const drawerLinks = document.querySelectorAll('.drawer-nav-link');
 
   let currentActiveWindow = 'about';
 
@@ -82,6 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Update Mobile Drawer Nav state
+    drawerLinks.forEach(dLink => {
+      const dWin = dLink.getAttribute('data-window') || '';
+      if (dWin === cleanId) {
+        dLink.classList.add('active');
+      } else {
+        dLink.classList.remove('active');
+      }
+    });
+
     if (window.retroAudio) window.retroAudio.playWindowOpen();
   };
 
@@ -92,12 +103,66 @@ document.addEventListener('DOMContentLoaded', () => {
       targetWin.style.display = 'none';
       targetWin.classList.remove('active-window');
       topTabs.forEach(t => t.classList.remove('active-tab'));
+      drawerLinks.forEach(dl => dl.classList.remove('active'));
       if (window.retroAudio) window.retroAudio.playWindowClose();
     }
   };
 
   // Open default window (About Me)
   window.openWindow('about');
+
+  // Mobile Sidebar Drawer Controls
+  const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+  const mobileDrawer = document.getElementById('mobile-sidebar-drawer');
+  const mobileBackdrop = document.getElementById('mobile-sidebar-backdrop');
+  const mobileDrawerClose = document.getElementById('mobile-sidebar-close');
+
+  const openMobileDrawer = () => {
+    if (mobileDrawer && mobileBackdrop) {
+      mobileDrawer.classList.add('drawer-open');
+      mobileBackdrop.classList.add('backdrop-open');
+      if (window.retroAudio) window.retroAudio.playBlip(540, 'triangle', 0.05);
+    }
+  };
+
+  const closeMobileDrawer = () => {
+    if (mobileDrawer && mobileBackdrop) {
+      mobileDrawer.classList.remove('drawer-open');
+      mobileBackdrop.classList.remove('backdrop-open');
+      if (window.retroAudio) window.retroAudio.playBlip(380, 'triangle', 0.05);
+    }
+  };
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openMobileDrawer();
+    });
+  }
+
+  if (mobileDrawerClose) {
+    mobileDrawerClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMobileDrawer();
+    });
+  }
+
+  if (mobileBackdrop) {
+    mobileBackdrop.addEventListener('click', () => {
+      closeMobileDrawer();
+    });
+  }
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const winTarget = link.getAttribute('data-window');
+      if (winTarget) {
+        window.openWindow(winTarget);
+      }
+      closeMobileDrawer();
+    });
+  });
 
   // Desktop Icons Click Handlers
   desktopIcons.forEach(icon => {
